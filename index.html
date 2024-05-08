@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            width: 60%;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>URL Shortener</h1>
+        <input type="text" id="originalUrl" placeholder="Enter a long URL">
+        <button onclick="shortenUrl()">Shorten URL</button>
+        <p id="shortenedUrl"></p>
+    </div>
+
+    <script>
+        function shortenUrl() {
+            const originalUrl = document.getElementById('originalUrl').value;
+
+            // Basic error handling
+            if (!originalUrl) {
+                alert("Please enter a valid URL");
+                return;
+            }
+
+            // Generate a simple "shortened" URL
+            const shortenedUrl = "https://jjboi2102.github.io/test/" + btoa(originalUrl);
+
+            // Display the shortened URL
+            document.getElementById('shortenedUrl').innerText = `Shortened URL: ${shortenedUrl}`;
+        }
+    </script>
+</body>
+</html>
